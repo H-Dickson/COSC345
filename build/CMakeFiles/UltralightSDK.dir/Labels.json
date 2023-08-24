@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Users/1henr/Documents/2023/COSC345/UltraLight/build/CMakeFiles/UltralightSDK"
+		},
+		{
+			"file" : "C:/Users/1henr/Documents/2023/COSC345/UltraLight/build/CMakeFiles/1e325a3e613745466e36dfb1ea7bb82e/UltralightSDK.rule"
+		},
+		{
+			"file" : "C:/Users/1henr/Documents/2023/COSC345/UltraLight/build/CMakeFiles/4954881d50e47d95c0b794da5a079145/UltralightSDK-complete.rule"
+		},
+		{
+			"file" : "C:/Users/1henr/Documents/2023/COSC345/UltraLight/build/CMakeFiles/d7ee226cb3ae2a0ca47c6a7cf872ed1e/UltralightSDK-build.rule"
+		},
+		{
+			"file" : "C:/Users/1henr/Documents/2023/COSC345/UltraLight/build/CMakeFiles/d7ee226cb3ae2a0ca47c6a7cf872ed1e/UltralightSDK-configure.rule"
+		},
+		{
+			"file" : "C:/Users/1henr/Documents/2023/COSC345/UltraLight/build/CMakeFiles/d7ee226cb3ae2a0ca47c6a7cf872ed1e/UltralightSDK-download.rule"
+		},
+		{
+			"file" : "C:/Users/1henr/Documents/2023/COSC345/UltraLight/build/CMakeFiles/d7ee226cb3ae2a0ca47c6a7cf872ed1e/UltralightSDK-install.rule"
+		},
+		{
+			"file" : "C:/Users/1henr/Documents/2023/COSC345/UltraLight/build/CMakeFiles/d7ee226cb3ae2a0ca47c6a7cf872ed1e/UltralightSDK-mkdir.rule"
+		},
+		{
+			"file" : "C:/Users/1henr/Documents/2023/COSC345/UltraLight/build/CMakeFiles/d7ee226cb3ae2a0ca47c6a7cf872ed1e/UltralightSDK-patch.rule"
+		},
+		{
+			"file" : "C:/Users/1henr/Documents/2023/COSC345/UltraLight/build/CMakeFiles/d7ee226cb3ae2a0ca47c6a7cf872ed1e/UltralightSDK-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"UltralightSDK"
+		],
+		"name" : "UltralightSDK"
+	}
+}
