@@ -1,5 +1,8 @@
 # ultralight-quick-start
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ab34642cc3c743949f47d5427bd4018a)](https://app.codacy.com/gh/H-Dickson/COSC345?utm_source=github.com&utm_medium=referral&utm_content=H-Dickson/COSC345&utm_campaign=Badge_Grade)
+
+
 __Clone this repo to try a simple Ultralight app!__
 
 This is a minimal Ultralight app you can use with the [Writing Your First App](https://docs.ultralig.ht/docs/writing-your-first-app) article in the Ultralight documentation.
