@@ -11,3 +11,14 @@ Henry Dickson
 CJ Lunda
 
 Nicky Patterson
+
+
+### Installation
+The code is build with CMake. The current build is for windows machines. 
+
+## To install
+```
+git clone git@github.com:H-Dickson/COSC345.git
+cd COSC345
+
+```
