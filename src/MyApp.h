@@ -1,3 +1,7 @@
+/**
+ * @file
+ * Ultralight application class
+ */
 #pragma once
 #include <AppCore/AppCore.h>
 
