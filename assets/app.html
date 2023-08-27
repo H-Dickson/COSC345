@@ -1,13 +1,45 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>MyApp -- (edit this title in app.html)</title>
+<head>
+    <meta charset="utf-8">
+    <title>Mapbox Route Planning</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
     <style>
-    body {
-      font-family: -apple-system, 'Segoe UI Light', Ubuntu, Arial, sans-serif;
-    }
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
     </style>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-  </body>
+</head>
+<body>
+    <div id='map'></div>
+    <script>
+        mapboxgl.accessToken = ${MAPBOX_API};
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v11',
+            center: [-74.5, 40], // Starting center coordinates
+            zoom: 9 // Starting zoom level
+        });
+
+        // Add controls to move the map
+        map.addControl(new mapboxgl.NavigationControl());
+
+        // Initialize the Directions API
+        var directions = new MapboxDirections({
+            accessToken: mapboxgl.accessToken
+        });
+
+        // Add the Directions API control to the map
+        map.addControl(directions, 'top-left');
+    </script>
+</body>
 </html>
