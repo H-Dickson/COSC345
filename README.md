@@ -12,5 +12,3 @@ CJ Lunda
 
 Nicky Patterson
 
-
-
