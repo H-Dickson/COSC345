@@ -1,0 +1,39 @@
+:root {
+  --header-height: 80px;
+  --footer-height: 20px;
+
+}
+
+body {
+  margin: 0;
+  position: relative;
+  background-color: #dbcccc;
+  padding-top: 50px;
+  
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+h1{
+  float: left;
+  width: 100%;
+  top:0;
+  margin: 0;
+  position: fixed;
+  padding-bottom: 10px;
+  padding-top: 10px;
+
+  border-bottom: 5px solid #f2f2f2;
+  text-align: center;
+  font-size: xx-large;
+  color: #f2f2f2;
+  background-color: lightskyblue;
+}
+
+#map {
+position: fixed;
+top: 90px; 
+height: 540px;
+width: 90%; 
+left:5%;
+box-shadow: 2px 2px 8px #0007;
+}
+

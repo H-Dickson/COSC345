@@ -1,24 +1,34 @@
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/c1d943f6d79948be92cbb99c7742854c)](https://app.codacy.com/gh/H-Dickson/COSC345/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
-[![Cmake](https://github.com/H-Dickson/COSC345/actions/workflows/cmake-single-platform.yml/badge.svg)](https://github.com/H-Dickson/COSC345/actions/workflows/cmake-single-platform.yml)
-[![Documentation](https://codedocs.xyz/H-Dickson/COSC345.svg)](https://codedocs.xyz/H-Dickson/COSC345)
-[![codecov](https://codecov.io/gh/H-Dickson/COSC345/branch/main/graph/badge.svg)](https://app.codecov.io/gh/H-Dickson/COSC345)
+# ultralight-quick-start
 
+__Clone this repo to try a simple Ultralight app!__
 
-## An application for viewing dangerous roads in New Zealand
+This is a minimal Ultralight app you can use with the [Writing Your First App](https://docs.ultralig.ht/docs/writing-your-first-app) article in the Ultralight documentation.
 
-Henry Dickson
+## 1. Install the Prerequisites
 
-CJ Lunda
+Before you build and run, you'll need to [install the prerequisites](https://docs.ultralig.ht/docs/installing-prerequisites) for your platform.
 
-Nicky Patterson
+## 2. Clone and build the app
 
+To clone the repo and build, run the following:
 
-### Installation
-The code is build with CMake. The current build is for windows machines. 
-
-## To install
+```shell
+git clone https://github.com/ultralight-ux/ultralight-quick-start
+cd ultralight-quick-start
+cmake -B build
+cmake --build build --config Release
 ```
-git clone git@github.com:H-Dickson/COSC345.git
-cd COSC345
 
-```
+## 3. Run the app
+
+### On macOS and Linux
+
+Navigate to `ultralight-quick-start/build` and run `MyApp` to launch the program.
+
+### On Windows
+
+Navigate to `ultralight-quick-start/build/Release` and run `MyApp` to launch the program.
+
+## Further Reading
+
+Follow the [Writing Your First App](https://docs.ultralig.ht/docs/writing-your-first-app) guide and other tutorials in the documentation for more info.

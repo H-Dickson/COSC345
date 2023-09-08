@@ -7,5 +7,4 @@ set(SOURCES "src/MyApp.h"
             "src/MyApp.cpp"
             "src/main.cpp")
 
-
 add_app("${SOURCES}")

@@ -1,45 +1,21 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>Mapbox Route Planning</title>
-    <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-        }
-
-        #map {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+    <title>SCORP App</title>
+    <link rel ='stylesheet' , href='https://unpkg.com/leaflet@1.9.3/dist/leaflet.css'
+              integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+              crossorigin="" ) />
+    <link rel='stylesheet', href='/stylesheets/style.css') />
+    <link rel='stylesheet' href='/javascripts/leaflet/leaflet.css') />
+    <script src='/javascripts/leaflet/leaflet.js')></script>
+    <script src="GeoJSON.js"></script>
 </head>
 <body>
-    <div id='map'></div>
-    <script>
-        mapboxgl.accessToken = ${MAPBOX_API};
-        var map = new mapboxgl.Map({
-            container: 'map',
-            style: 'mapbox://styles/mapbox/streets-v11',
-            center: [-74.5, 40], // Starting center coordinates
-            zoom: 9 // Starting zoom level
-        });
-
-        // Add controls to move the map
-        map.addControl(new mapboxgl.NavigationControl());
-
-        // Initialize the Directions API
-        var directions = new MapboxDirections({
-            accessToken: mapboxgl.accessToken
-        });
-
-        // Add the Directions API control to the map
-        map.addControl(directions, 'top-left');
-    </script>
+    <block content>
+        <h1>SCORP Safe Map</h1>
+        <div id="map"></div>
+        <div id="out"></div>
+    </block>
+    <script src='/javascripts/index.js'></script>
 </body>
 </html>
