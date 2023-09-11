@@ -19,7 +19,7 @@ The code is build with CMake. The current build is for windows machines.
 
 Before you build and run, you'll need to [install the prerequisites](https://docs.ultralig.ht/docs/installing-prerequisites) for your platform.
 ```
-## 2. Clone and build the app
+### Clone and build the app
 
 To clone the repo and build, run the following:
 
