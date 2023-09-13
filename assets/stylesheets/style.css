@@ -31,7 +31,7 @@ h1{
 #map {
 position: fixed;
 top: 90px; 
-height: 540px;
+height: 75%;
 width: 90%; 
 left:5%;
 box-shadow: 2px 2px 8px #0007;

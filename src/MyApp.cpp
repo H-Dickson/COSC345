@@ -1,7 +1,7 @@
 #include "MyApp.h"
 
-#define WINDOW_WIDTH  600
-#define WINDOW_HEIGHT 400
+#define WINDOW_WIDTH  700
+#define WINDOW_HEIGHT 500
 
 MyApp::MyApp() {
   ///
@@ -103,8 +103,15 @@ void MyApp::OnDOMReady(ultralight::View* caller,
   ///
   /// This is the best time to setup any JavaScript bindings.
   ///
-}
+    // this is how you get information from javascript file
+    if (is_main_frame) {
+        // Access the view object from the caller
+        ultralight::View* view = caller;
 
+        // Now you can use 'view' to evaluate JavaScript
+        String result = view->EvaluateScript("1 + 1");
+    }
+}
 void MyApp::OnChangeCursor(ultralight::View* caller,
                            Cursor cursor) {
   ///
