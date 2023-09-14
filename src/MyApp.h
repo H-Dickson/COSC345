@@ -36,6 +36,8 @@ public:
                           bool is_main_frame,
                           const String& url) override;
 
+
+
   // This is called when the page requests to change the Cursor.
   virtual void OnChangeCursor(ultralight::View* caller,
     Cursor cursor) override;

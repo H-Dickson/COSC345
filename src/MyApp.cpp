@@ -1,4 +1,5 @@
 #include "MyApp.h"
+#include <iostream>
 
 #define WINDOW_WIDTH  700
 #define WINDOW_HEIGHT 500
@@ -110,7 +111,9 @@ void MyApp::OnDOMReady(ultralight::View* caller,
 
         // Now you can use 'view' to evaluate JavaScript
         String result = view->EvaluateScript("1 + 1");
+
     }
+
 }
 void MyApp::OnChangeCursor(ultralight::View* caller,
                            Cursor cursor) {
