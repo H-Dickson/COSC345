@@ -109,10 +109,12 @@ void MyApp::OnDOMReady(ultralight::View* caller,
         // Access the view object from the caller
         ultralight::View* view = caller;
 
+       
         // Now you can use 'view' to evaluate JavaScript
         String result = view->EvaluateScript("1 + 1");
 
     }
+
 
 }
 void MyApp::OnChangeCursor(ultralight::View* caller,
@@ -124,6 +126,7 @@ void MyApp::OnChangeCursor(ultralight::View* caller,
   ///
   window_->SetCursor(cursor);
 }
+
 
 void MyApp::OnChangeTitle(ultralight::View* caller,
                           const String& title) {

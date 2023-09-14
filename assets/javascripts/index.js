@@ -9,20 +9,44 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 // Replace 'YOUR_API_KEY' with your actual OpenWeatherMap API key
 const apiKey = 'cd6160f091b27addb4600525abbcf0f2';
--45.883268013958514, 170.49907238856377
-// Get the weather data for the center of your map
-fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${-45.883268013958514}&lon=${170.49907238856377}&units=metric&appid=${apiKey}`)
-    .then(response => response.json())
-    .then(data => {
-        // Extract relevant weather information
-        const temperature = data.main.temp;
-        const weatherDescription = data.weather[0].description;
-        console.log(`Temperature: ${temperature}°C`);
-        console.log(`Weather: ${weatherDescription}`);
-        // Create a marker with a popup displaying weather information
-        const marker = L.marker([-45.883268013958514, 170.49907238856377]).addTo(map);
-        marker.bindPopup(`Temperature: ${temperature}&#8451;<br>Weather: ${weatherDescription}`).openPopup();
-    })
-    .catch(error => {
-        console.error('Error fetching weather data:', error);
-    });
+
+let markers = []; // Array to store markers
+
+function onMapClick(e) {
+    var latlng = e.latlng.toString()
+    latlng = latlng.substring(7, latlng.length - 1)
+    const resultArray = splitStringAtCommaSpace(latlng);
+    lat = resultArray[0]
+    long = resultArray[1]
+
+    // Remove markers if there are more than two
+    if (markers.length >= 2) {
+        const removedMarker = markers.shift(); // Remove the oldest marker
+        map.removeLayer(removedMarker); // Remove it from the map
+    }
+
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=metric&appid=${apiKey}`)
+        .then(response => response.json())
+        .then(data => {
+            // Extract relevant weather information
+            const temperature = data.main.temp;
+            const weatherDescription = data.weather[0].description;
+            console.log(`Temperature: ${temperature}°C`);
+            console.log(`Weather: ${weatherDescription}`);
+
+            // Create a marker with a popup displaying weather information
+            const marker = L.marker([lat, long]).addTo(map);
+            marker.bindPopup(`Temperature: ${temperature}&#8451;<br>Weather: ${weatherDescription}`).openPopup();
+
+            markers.push(marker); // Add the new marker to the array
+        })
+        .catch(error => {
+            console.error('Error fetching weather data:', error);
+        });
+}
+
+map.on('click', onMapClick);
+
+function splitStringAtCommaSpace(inputString) {
+    return inputString.split(', ');
+}
