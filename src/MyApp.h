@@ -38,6 +38,9 @@ public:
 
 
 
+ void HandleWeatherData(const String& temperature, const String& weatherDescription);
+
+ void PassDataToJavaScript(ultralight::View* caller, const String& temperature, const String& weatherDescription);
   // This is called when the page requests to change the Cursor.
   virtual void OnChangeCursor(ultralight::View* caller,
     Cursor cursor) override;
@@ -45,7 +48,7 @@ public:
   virtual void OnChangeTitle(ultralight::View* caller,
     const String& title) override;
 
-protected:
+public:
   RefPtr<App> app_;
   RefPtr<Window> window_;
   RefPtr<Overlay> overlay_;
