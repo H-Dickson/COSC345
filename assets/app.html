@@ -5,19 +5,20 @@
     <link rel='stylesheet' , href='https://unpkg.com/leaflet@1.9.3/dist/leaflet.css'
           integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
           crossorigin="" ) />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css" />
-    <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
     <link rel='stylesheet' , href='/stylesheets/style.css' ) />
     <link rel='stylesheet' href='/javascripts/leaflet/leaflet.css' ) />
+    <link rel="stylesheet" href="/javascripts/dist/leaflet-routing-machine.css" />
     <script src='/javascripts/leaflet/leaflet.js' )></script>
+    <script src="/javascripts/dist/leaflet-routing-machine.js"></script>
     <script src="GeoJSON.js"></script>
 </head>
 <body>
     <block content>
         <h1>SCORP Safe Map</h1>
-
+        <aside id="info">
+            <p></p>
+        </aside>
         <div id="map"></div>
-        <div id="out"></div>
     </block>
     <script src='/javascripts/index.js'></script>
 </body>

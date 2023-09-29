@@ -10,6 +10,8 @@ class MyApp : public AppListener,
 public:
   MyApp();
 
+
+
   virtual ~MyApp();
 
   // Start the run loop.

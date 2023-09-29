@@ -2,12 +2,17 @@
 #include <iostream>
 #include <Ultralight/Ultralight.h>
 
-#define WINDOW_WIDTH  700
-#define WINDOW_HEIGHT 500
+#define WINDOW_WIDTH  1500
+#define WINDOW_HEIGHT 600
+
+
 
 using namespace ultralight;
 
 MyApp::MyApp() {
+
+
+
     ///
     /// Create our main App instance.
     ///
@@ -17,9 +22,11 @@ MyApp::MyApp() {
     ///
     /// Create a resizable window by passing by OR'ing our window flags with
     /// kWindowFlags_Resizable.
+    /// 
     ///
     window_ = Window::Create(app_->main_monitor(), WINDOW_WIDTH, WINDOW_HEIGHT,
         false, kWindowFlags_Titled | kWindowFlags_Resizable);
+
 
     ///
     /// Create our HTML overlay-- we don't care about its initial size and
