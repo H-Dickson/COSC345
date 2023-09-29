@@ -1,27 +1,26 @@
 const map = L.map('map', {
-    //center: [57.74, 11.94],
     center: [-40.81096158981925, 173.95225110400173],
     zoom: 3.5
 });
+
 const apiKey = 'cd6160f091b27addb4600525abbcf0f2';
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
 let markers = [];
+let clickedPoints = [];
 
-
-
-let previousMarker = null; // To store the previous clicked marker
-
-/*
 map.on('click', function (e) {
     const lat = e.latlng.lat;
     const long = e.latlng.lng;
 
-    if (markers.length >= 2) {
-        const removedMarker = markers.pop();
-        map.removeLayer(removedMarker);
+    // Clear previous markers and route
+    markers.forEach(marker => map.removeLayer(marker));
+    markers = [];
+    if (clickedPoints.length >= 2) {
+        map.removeControl(routeControl);
+        clickedPoints = [];
     }
 
     fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=metric&appid=${apiKey}`)
@@ -34,16 +33,25 @@ map.on('click', function (e) {
             marker.bindPopup(`Temperature: ${temperature}&#8451;<br>Weather: ${weatherDescription}`).openPopup();
 
             markers.push(marker);
-            createPath(e.latlng, marker.getLatLng());
+            clickedPoints.push({ lat, lng: long, temperature, weatherDescription });
+
+            if (clickedPoints.length === 2) {
+                createRoute(clickedPoints[0], clickedPoints[1]);
+            }
         })
         .catch(error => {
             console.error('Error fetching weather data:', error);
         });
-});*/
-L.Routing.control({
-    waypoints: [
-        L.latLng(-45.87449754029905, 170.50337550746337),
-        L.latLng(-45.09709116137747, 170.97129551312722)
-    ],
-    routeWhileDragging: true
-}).addTo(map);
+});
+
+let routeControl = null;
+
+function createRoute(start, end) {
+    routeControl = L.Routing.control({
+        waypoints: [
+            L.latLng(start.lat, start.lng),
+            L.latLng(end.lat, end.lng)
+        ],
+        routeWhileDragging: true
+    }).addTo(map);
+}
