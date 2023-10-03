@@ -1,4 +1,5 @@
 #include "MyApp.h"
+#include "calculate.h" 
 #include <iostream>
 #include <Ultralight/Ultralight.h>
 
@@ -8,6 +9,40 @@
 
 
 using namespace ultralight;
+
+inline std::string ToUTF8(const String& str) {
+    String8 utf8 = str.utf8();
+    return std::string(utf8.data(), utf8.length());
+}
+
+inline const char* Stringify(MessageSource source) {
+    switch (source) {
+    case kMessageSource_XML: return "XML";
+    case kMessageSource_JS: return "JS";
+    case kMessageSource_Network: return "Network";
+    case kMessageSource_ConsoleAPI: return "ConsoleAPI";
+    case kMessageSource_Storage: return "Storage";
+    case kMessageSource_AppCache: return "AppCache";
+    case kMessageSource_Rendering: return "Rendering";
+    case kMessageSource_CSS: return "CSS";
+    case kMessageSource_Security: return "Security";
+    case kMessageSource_ContentBlocker: return "ContentBlocker";
+    case kMessageSource_Other: return "Other";
+    default: return "";
+    }
+}
+
+inline const char* Stringify(MessageLevel level) {
+    switch (level) {
+    case kMessageLevel_Log: return "Log";
+    case kMessageLevel_Warning: return "Warning";
+    case kMessageLevel_Error: return "Error";
+    case kMessageLevel_Debug: return "Debug";
+    case kMessageLevel_Info: return "Info";
+    default: return "";
+    }
+}
+
 
 MyApp::MyApp() {
 
@@ -76,6 +111,23 @@ void MyApp::Run() {
     app_->Run();
 }
 
+JSValueRef MyCallback(JSContextRef ctx, JSObjectRef function, JSObjectRef thisObject, size_t argumentCount, const JSValueRef arguments[], JSValueRef* exception) {
+    if (argumentCount == 2) {
+        double arg1 = JSValueToNumber(ctx, arguments[0], NULL);
+        double arg2 = JSValueToNumber(ctx, arguments[1], NULL);
+
+        // Perform C++ logic with the arguments
+        double result = arg1 + arg2;
+
+        // Return a value to JavaScript
+        return JSValueMakeNumber(ctx, result);
+    }
+
+    // Handle invalid number of arguments or other error cases
+    return JSValueMakeUndefined(ctx);
+}
+
+
 void MyApp::OnUpdate() {
     ///
     /// This is called repeatedly from the application's update loop.
@@ -106,18 +158,42 @@ void MyApp::OnFinishLoading(ultralight::View* caller,
     ///
 }
 
+
+
+
+JSValue MyApp::GetArea(const JSObject& thisObject, const JSArgs& args) {
+    std::cout << "GetArea Called"  << std::endl;
+    ultralight::String lat = args[0].ToString();
+    std::string lat_t = std::string(lat.utf8().data());
+    ultralight::String lon = args[1].ToString();
+    std::string lon_t = std::string(lon.utf8().data());
+    std::cout << "Latitude: " << lat_t << " Longitude: " << lon_t << std::endl;
+
+    // Call the CalculateArea function from the Calculator class
+    MyCalculator calculate;
+    std::string area = calculate.CalculateArea(lat_t, lon_t);
+    std::cout << "Returned from Calculate" << area << std::endl;
+    // Convert the calculated area to a JSValue and return it
+    return JSValue(area.c_str());
+}
+
 void MyApp::OnDOMReady(ultralight::View* caller,
     uint64_t frame_id,
     bool is_main_frame,
     const String& url) {
+    std::cout << "OnDOMReady called" << std::endl;
+    RefPtr<JSContext> context = caller->LockJSContext();
+    SetJSContext(context->ctx());
+
+    JSObject global = JSGlobalObject();
+    global["GetArea"] = BindJSCallbackWithRetval(&MyApp::GetArea);
     if (is_main_frame) {
         // Access the view object from the caller
         ultralight::View* view = caller;
 
-        // Now you can use 'view' to evaluate JavaScript
-        view->EvaluateScript("setupCommunication();"); // Call a JavaScript function to set up communication
     }
 }
+
 
 void MyApp::OnChangeCursor(ultralight::View* caller,
     Cursor cursor) {
@@ -128,6 +204,27 @@ void MyApp::OnChangeTitle(ultralight::View* caller,
     const String& title) {
     window_->SetTitle(title.utf8().data());
 }
+
+void MyApp::OnAddConsoleMessage(View* caller,
+    MessageSource source,
+    MessageLevel level,
+    const String& message,
+    uint32_t line_number,
+    uint32_t column_number,
+    const String& source_id) {
+
+    std::cout << "[Console]: [" << Stringify(source) << "] ["
+        << Stringify(level) << "] " << ToUTF8(message);
+
+    if (source == kMessageSource_JS) {
+        std::cout << " (" << ToUTF8(source_id) << " @ line " << line_number
+            << ", col " << column_number << ")";
+    }
+
+    std::cout << std::endl;
+
+}
+
 
 // This function will be called from JavaScript
 void MyApp::HandleWeatherData(const String& temperature, const String& weatherDescription) {

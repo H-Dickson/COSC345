@@ -5,7 +5,10 @@ include(cmake/App.cmake)
 
 set(SOURCES "src/MyApp.h"
             "src/MyApp.cpp"
-            "src/main.cpp")
+            "src/main.cpp"
+            "src/calculate.cpp"
+            "src/calculate.h"
+)
 
 add_app("${SOURCES}")
 
@@ -23,7 +26,7 @@ enable_testing()
 add_executable(
   hello_test
   hello_test.cc
-)
+ "src/calculate.cpp")
 target_link_libraries(
   hello_test
   GTest::gtest_main

@@ -14,7 +14,13 @@ let clickedPoints = [];
 map.on('click', function (e) {
     const lat = e.latlng.lat;
     const long = e.latlng.lng;
-
+    console.log("Testing C++ to JS");
+    try{
+        const C_Value = GetArea(lat, long);
+        console.log(C_Value);
+    }catch{
+        console.error("Error fetching area", error);
+    }
     // Clear previous markers and route
     markers.forEach(marker => map.removeLayer(marker));
     markers = [];

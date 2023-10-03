@@ -38,7 +38,15 @@ public:
                           bool is_main_frame,
                           const String& url) override;
 
+  void OnAddConsoleMessage(ultralight::View* caller,
+      ultralight::MessageSource source,
+      ultralight::MessageLevel level,
+      const ultralight::String& message,
+      uint32_t line_number,
+      uint32_t column_number,
+      const ultralight::String& source_id);
 
+  JSValue GetArea(const JSObject& thisObject, const JSArgs& args);
 
  void HandleWeatherData(const String& temperature, const String& weatherDescription);
 
