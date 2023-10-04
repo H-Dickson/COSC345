@@ -1,14 +1,19 @@
 #include "MyApp.h"
-#include "calculate.h" 
+#include "calculate.h"
+#include "location.h"
 #include <iostream>
+#include <fstream>
+#include <sstream>
+#include <vector>
 #include <Ultralight/Ultralight.h>
-
 #define WINDOW_WIDTH  1500
 #define WINDOW_HEIGHT 600
 
 
 
 using namespace ultralight;
+
+std::vector<Location> locations;
 
 inline std::string ToUTF8(const String& str) {
     String8 utf8 = str.utf8();
@@ -158,7 +163,20 @@ void MyApp::OnFinishLoading(ultralight::View* caller,
     ///
 }
 
+void MyApp::loadData() {
+    std::cout << "inside Load" << std::endl;
+    std::string filename = "./assets/region_data/sorted_file.csv";
+    locations = readDataFromFile(filename);
 
+    if (locations.empty()) {
+        std::cout << "Error: No data loaded from the CSV file." << std::endl;
+        return;
+    }
+
+    std::cout << "Location data loaded:" << std::endl;
+
+ 
+}
 
 
 JSValue MyApp::GetArea(const JSObject& thisObject, const JSArgs& args) {
@@ -171,17 +189,24 @@ JSValue MyApp::GetArea(const JSObject& thisObject, const JSArgs& args) {
 
     // Call the CalculateArea function from the Calculator class
     MyCalculator calculate;
-    std::string area = calculate.CalculateArea(lat_t, lon_t);
+    std::string area = calculate.CalculateArea(lat_t, lon_t, locations);
     std::cout << "Returned from Calculate" << area << std::endl;
     // Convert the calculated area to a JSValue and return it
     return JSValue(area.c_str());
 }
+
+
+
+
 
 void MyApp::OnDOMReady(ultralight::View* caller,
     uint64_t frame_id,
     bool is_main_frame,
     const String& url) {
     std::cout << "OnDOMReady called" << std::endl;
+    std::cout << "Calling load" << std::endl;
+    loadData();
+    std::cout << "Finished load" << std::endl;
     RefPtr<JSContext> context = caller->LockJSContext();
     SetJSContext(context->ctx());
 

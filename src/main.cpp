@@ -5,16 +5,11 @@
 #include <string>
 #include <vector>
 #include <windows.h>
-struct CrashData {
-    int northing;
-    int easting;
-    std::string crashSeverity;
-    int crashYear;
-    std::string weatherA;
-};
+
+
+
 int main() {
     AllocConsole();
-
     // Redirect standard input and output to the console
     freopen("CONIN$", "r", stdin);
     freopen("CONOUT$", "w", stdout);

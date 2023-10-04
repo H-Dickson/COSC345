@@ -1,5 +1,7 @@
 #pragma once
 #include <AppCore/AppCore.h>
+#include <vector>
+#include "location.h"
 
 using namespace ultralight;
 
@@ -47,6 +49,8 @@ public:
       const ultralight::String& source_id);
 
   JSValue GetArea(const JSObject& thisObject, const JSArgs& args);
+
+  void loadData();
 
  void HandleWeatherData(const String& temperature, const String& weatherDescription);
 
