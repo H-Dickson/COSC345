@@ -8,6 +8,8 @@ set(SOURCES "src/MyApp.h"
             "src/main.cpp"
             "src/calculate.cpp"
             "src/calculate.h"
+            "src/location.cpp"
+            "src/location.h"
 )
 
 add_app("${SOURCES}")
