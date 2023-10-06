@@ -12,6 +12,7 @@ CJ Lunda
 
 Nicky Patterson
 
+Our app lets you click around New Zealand routing from point to point, showing you directions and the crashes at the points clicked.
 
 ### Installation
 ```
