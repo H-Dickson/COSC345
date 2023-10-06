@@ -7,17 +7,30 @@ const apiKey = 'cd6160f091b27addb4600525abbcf0f2';
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
-
+let count = 0;
 let markers = [];
 let clickedPoints = [];
-
+let totalvalue = 0;
 map.on('click', function (e) {
+    count++;
+    if (count == 3) {
+        count = 0;
+        totalvalue = 0;
+    }
     const lat = e.latlng.lat;
     const long = e.latlng.lng;
     console.log("Testing C++ to JS");
     try{
         const C_Value = GetArea(lat, long);
         console.log(C_Value);
+        
+            let intValue = parseInt(totalvalue);
+            let C_val_int = parseInt(C_Value)
+            totalvalue = intValue + C_val_int;
+            totalvalue.toString();
+            const textBox = document.getElementById('text-box');
+            textBox.innerText = `Crash Total: ${totalvalue}`;
+        
     }catch{
         console.error("Error fetching area", error);
     }
@@ -27,8 +40,10 @@ map.on('click', function (e) {
     if (clickedPoints.length >= 2) {
         map.removeControl(routeControl);
         clickedPoints = [];
-    }
+        
 
+    }
+   
     fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=metric&appid=${apiKey}`)
         .then(response => response.json())
         .then(data => {

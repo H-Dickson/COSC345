@@ -81,7 +81,8 @@ void findClosePoints(const std::vector<Location>& locations, double targetX, dou
 
  std::string MyCalculator::CalculateArea(const std::string& lat, const std::string& lon, std::vector<Location> loc) {
         // Implement area calculation logic here
-        // You can use the provided latitude (lat) and longitude (lon) strings
+        // You can use the provided latitude (lat) and longitude (lon) string
+        count = 0;
         findClosePoints(loc, std::stod(lon), std::stod(lat));
         std::cout << "Hello from Calculate Area" << std::endl;
         std::cout << "latitude: " << lat << "Longitude" << lon << std::endl;
