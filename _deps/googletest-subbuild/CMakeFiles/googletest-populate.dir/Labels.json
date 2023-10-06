@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Users/User/Documents/SCORP/COSC345/_deps/googletest-subbuild/CMakeFiles/googletest-populate"
+		},
+		{
+			"file" : "C:/Users/User/Documents/SCORP/COSC345/_deps/googletest-subbuild/CMakeFiles/41829516a719933b8c0eea154da13867/googletest-populate.rule"
+		},
+		{
+			"file" : "C:/Users/User/Documents/SCORP/COSC345/_deps/googletest-subbuild/CMakeFiles/f3f97ada70cb09073230b69997012125/googletest-populate-complete.rule"
+		},
+		{
+			"file" : "C:/Users/User/Documents/SCORP/COSC345/_deps/googletest-subbuild/CMakeFiles/e45d9d9e21237076b7d23f3a6ea43d14/googletest-populate-build.rule"
+		},
+		{
+			"file" : "C:/Users/User/Documents/SCORP/COSC345/_deps/googletest-subbuild/CMakeFiles/e45d9d9e21237076b7d23f3a6ea43d14/googletest-populate-configure.rule"
+		},
+		{
+			"file" : "C:/Users/User/Documents/SCORP/COSC345/_deps/googletest-subbuild/CMakeFiles/e45d9d9e21237076b7d23f3a6ea43d14/googletest-populate-download.rule"
+		},
+		{
+			"file" : "C:/Users/User/Documents/SCORP/COSC345/_deps/googletest-subbuild/CMakeFiles/e45d9d9e21237076b7d23f3a6ea43d14/googletest-populate-install.rule"
+		},
+		{
+			"file" : "C:/Users/User/Documents/SCORP/COSC345/_deps/googletest-subbuild/CMakeFiles/e45d9d9e21237076b7d23f3a6ea43d14/googletest-populate-mkdir.rule"
+		},
+		{
+			"file" : "C:/Users/User/Documents/SCORP/COSC345/_deps/googletest-subbuild/CMakeFiles/e45d9d9e21237076b7d23f3a6ea43d14/googletest-populate-patch.rule"
+		},
+		{
+			"file" : "C:/Users/User/Documents/SCORP/COSC345/_deps/googletest-subbuild/CMakeFiles/e45d9d9e21237076b7d23f3a6ea43d14/googletest-populate-test.rule"
+		},
+		{
+			"file" : "C:/Users/User/Documents/SCORP/COSC345/_deps/googletest-subbuild/CMakeFiles/e45d9d9e21237076b7d23f3a6ea43d14/googletest-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"googletest-populate"
+		],
+		"name" : "googletest-populate"
+	}
+}

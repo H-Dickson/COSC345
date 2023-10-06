@@ -6,9 +6,8 @@
 #include <sstream>
 #include <vector>
 #include <Ultralight/Ultralight.h>
-#define WINDOW_WIDTH  1500
+#define WINDOW_WIDTH  1200
 #define WINDOW_HEIGHT 600
-
 
 
 using namespace ultralight;

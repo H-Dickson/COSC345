@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Users/User/Documents/SCORP/COSC345/CMakeFiles/UltralightSDK"
+		},
+		{
+			"file" : "C:/Users/User/Documents/SCORP/COSC345/CMakeFiles/2079cf0a3cfd597863c1397a59de406f/UltralightSDK.rule"
+		},
+		{
+			"file" : "C:/Users/User/Documents/SCORP/COSC345/CMakeFiles/e5b28b326cb912fd2796694fb42eb8fb/UltralightSDK-complete.rule"
+		},
+		{
+			"file" : "C:/Users/User/Documents/SCORP/COSC345/CMakeFiles/9b06862ee552e24d409b0497022a3982/UltralightSDK-build.rule"
+		},
+		{
+			"file" : "C:/Users/User/Documents/SCORP/COSC345/CMakeFiles/9b06862ee552e24d409b0497022a3982/UltralightSDK-configure.rule"
+		},
+		{
+			"file" : "C:/Users/User/Documents/SCORP/COSC345/CMakeFiles/9b06862ee552e24d409b0497022a3982/UltralightSDK-download.rule"
+		},
+		{
+			"file" : "C:/Users/User/Documents/SCORP/COSC345/CMakeFiles/9b06862ee552e24d409b0497022a3982/UltralightSDK-install.rule"
+		},
+		{
+			"file" : "C:/Users/User/Documents/SCORP/COSC345/CMakeFiles/9b06862ee552e24d409b0497022a3982/UltralightSDK-mkdir.rule"
+		},
+		{
+			"file" : "C:/Users/User/Documents/SCORP/COSC345/CMakeFiles/9b06862ee552e24d409b0497022a3982/UltralightSDK-patch.rule"
+		},
+		{
+			"file" : "C:/Users/User/Documents/SCORP/COSC345/CMakeFiles/9b06862ee552e24d409b0497022a3982/UltralightSDK-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"UltralightSDK"
+		],
+		"name" : "UltralightSDK"
+	}
+}

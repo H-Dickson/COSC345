@@ -1,0 +1,13 @@
+# Target labels
+ UltralightSDK
+# Source files and their labels
+C:/Users/User/Documents/SCORP/COSC345/CMakeFiles/UltralightSDK
+C:/Users/User/Documents/SCORP/COSC345/CMakeFiles/2079cf0a3cfd597863c1397a59de406f/UltralightSDK.rule
+C:/Users/User/Documents/SCORP/COSC345/CMakeFiles/e5b28b326cb912fd2796694fb42eb8fb/UltralightSDK-complete.rule
+C:/Users/User/Documents/SCORP/COSC345/CMakeFiles/9b06862ee552e24d409b0497022a3982/UltralightSDK-build.rule
+C:/Users/User/Documents/SCORP/COSC345/CMakeFiles/9b06862ee552e24d409b0497022a3982/UltralightSDK-configure.rule
+C:/Users/User/Documents/SCORP/COSC345/CMakeFiles/9b06862ee552e24d409b0497022a3982/UltralightSDK-download.rule
+C:/Users/User/Documents/SCORP/COSC345/CMakeFiles/9b06862ee552e24d409b0497022a3982/UltralightSDK-install.rule
+C:/Users/User/Documents/SCORP/COSC345/CMakeFiles/9b06862ee552e24d409b0497022a3982/UltralightSDK-mkdir.rule
+C:/Users/User/Documents/SCORP/COSC345/CMakeFiles/9b06862ee552e24d409b0497022a3982/UltralightSDK-patch.rule
+C:/Users/User/Documents/SCORP/COSC345/CMakeFiles/9b06862ee552e24d409b0497022a3982/UltralightSDK-update.rule
