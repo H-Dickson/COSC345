@@ -51,7 +51,9 @@ map.on('click', function (e) {
             const weatherDescription = data.weather[0].description;
 
             const marker = L.marker([lat, long]).addTo(map);
-            marker.bindPopup(`Temperature: ${temperature}&#8451;<br>Weather: ${weatherDescription}`).openPopup();
+            const weatherInfo = `Temperature: ${temperature}${String.fromCharCode(176)}C, Weather: ${weatherDescription}`;
+            const weatherTextBox = document.getElementById('weather-text-box');
+            weatherTextBox.innerText = weatherInfo;
 
             markers.push(marker);
             clickedPoints.push({ lat, lng: long, temperature, weatherDescription });
